@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Source+Code+Pro:wght@200&display=swap');
+* body{
+    margin: 0;
+    padding: 0;
+    font-family: 'KoHo', sans-serif;
+    overflow-x: hidden; /*TIRA A BARRA DE SCROLL HORIZONTAL*/
+}
+
+/*o próximo estilo não usa ponto para chamar*/
+html{/*faz com que a linkagem dos projetos na linha 190 seja suave*/
+    scroll-behavior: smooth;
+}
+
+
+/*CORES ORIGINAIS:
+#014871 Mais escura
+#d7ede2 Mais clara*/
+
+/*header*/
+.header-container{
+    box-sizing: border-box;/*deixa o conteúdo do tamanho da tela de imagem*/
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #486177, #243C58);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 112px; /*0= em cima e em baixo; 112px= dos lados*/
+    position: relative;
+    z-index: 1; /*faz o conteiner focar por baixo do menu quando este é acinonado*/
+}
+@keyframes animation1{
+    0%{
+        opacity: 0;
+
+    }
+    50%{
+        transform: translate(270px);
+        opacity: 2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/*TITULO*/
+.h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: 'KoHo', sans-serif;
+    font-size: 40px;
+    transition: 0.4s ease-in-out;
+    animation-name: animation1;
+    animation-duration: 1s;
+}
+.h1::selection{
+    background-color: rgb(5, 5, 70);
+    color: #fff;
+}
+.h1:hover {
+    --d:1px;
+    transition:0.5s cubic-bezier(.5, -700, .5, 700);
+}
+
+.h2{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: 'Source Code Pro', sans-serif;
+    transition: 0.4s ease-in-out;
+    animation-name: animation1;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+}
+.h2::selection{
+    background-color: rgb(5, 5, 70);
+    color: #fff;
+}
+
+/*medias sociais*/
+.social-media{
+    margin-top: 1rem;
+    display: flex;
+}
+.social-media a{
+    text-decoration: none;
+    color: #000;
+    padding: 1rem 4rem;
+    border: 1px solid ;
+    border-radius: 50px;
+    min-width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+}
+a:hover{
+    background: rgba(86, 1, 143, 0.253);
+    color: #fff;
+}
+
+/*BOX DE ABOUT ME*/
+.aboutme{
+    position: absolute;
+    width: 400px;
+    height: 560px;
+    background: url(eu_edited.png);
+    background-repeat: no-repeat;
+    background-position: 0px 38px; /*primeiro numero configur a posição geral (vertical/horizontal)
+e o segundo numero configura a altura (horizontal)*/
+    top: 130px;
+    left: 800px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 3px 3px 15px;
+}
+
+
+/*BLOCO DE ANIMAÇÃO*/
+.animation{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 170px;
+    left: 850px;
+    box-shadow: 3px 3px 15px #000;
+    animation: block 3s 0.5s infinite cubic-bezier(1, .015, .295, 1.225) alternate;
+    z-index: -1;
+}
+/*sua animação estálogoa baixo:*/
+@keyframes block{
+    0%{
+        border-radius: 0;
+        background: #486177;
+    }
+    40%{
+        border-radius: 50% 0 0 0;
+        transform: rotate(45deg);
+        background: #486177;
+    }
+    60%{
+        border-radius: 50% 50% 0 0;
+        transform: rotate(95deg);
+        background: #486177;
+    }
+    80%{
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(135deg);
+        background: #486177;
+    }
+    90%{
+        border-radius: 50% 50% 50% 50%;
+        transform: rotate(180deg);
+        background: #486177;
+    }
+}
+
+@keyframes animation_n2{
+    0%{
+        opacity: 0;
+
+    }
+    50%{
+        transform: translate(30px);
+        opacity: 2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/*SETA PARA BAIXO:*/
+.seta{
+    position: absolute;
+    background-image: url(setaDown.png);
+    background-size: 45px;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px;
+    z-index: 0;
+    bottom: 30px;
+    left: 50%;
+    animation-name: seta;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes seta{
+    from{
+        bottom: 110px;
+    }
+    to{
+        bottom: 80px;
+    }
+}
+
+.link1{
+    position: absolute;
+    top: 570px;
+    left: 630px;
+    text-decoration: none;
+    color: #000;
+    font-size: 21px;
+}
+.link1:hover{
+    color: #fff;
+    background: transparent;
+    animation-name: link1;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes link1{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    110%{
+        transform: scale(1);
+    }
+}
+
+
+
+
+/*EM MEMÓRIA DO MENU*/
+/*O menu encontra-se em sua total funcionalidade na pasta Portifolio1.0*/
+
+
+
+
+/*a partir daqui começa o resto do container wrapper*/
+.conteiner{
+    height: auto;
+    width: 100%;
+    height: 1100px;
+    background: #909A9C;
+}
+/*estrutura geral de cada um dos 3 rojetos*/
+.card-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+/*CARDS*/
+.card1{/*representa o formato geometrico principal*/
+    width: 300px;
+    height: 300px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(70, 70, 180);
+    /*colocar uma imagem dentro das formas geometricas*/
+    filter: grayscale(0.8);/*da efeito de mudança de cor cinza*/
+    background-image:  url(Clock2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #000;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.card2{/*representa o formato geometrico principal*/
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(70, 70, 180);
+    /*colocar uma imagem dentro das formas geometricas*/
+    filter: grayscale(0.8);/*da efeito de mudança de cor cinza*/
+    background-image:  url(WhatsApp\ Image\ 2021-10-13\ at\ 21.13.55.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #000;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.card3{/*representa o formato geometrico principal*/
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(70, 70, 180);
+    /*colocar uma imagem dentro das formas geometricas*/
+    filter: grayscale(0.8);/*da efeito de mudança de cor cinza*/
+    background-image:  url(image2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #000;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+/*texto ao lado das formas*/
+/*.card-text{
+    width: 40%;
+    letter-spacing: 1px;
+    color: rgb(61, 61, 61);
+}*/
+
+.card-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/*.card-wrapper::before{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    border: 1px solid #fff;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}*/
+.card-wrapper h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.5s ease-in-out;
+}
+
+/*EFEITO DOS TITILOS DOS PROJETOS*/
+.project-title:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(34, 3, 46);
+    animation-name: titulo_dos_projetos;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes titulo_dos_projetos{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    110%{
+        transform: scale(1);
+    }
+}
+.relogio{
+    text-decoration: none;
+    color: #000;
+}
+.relogio:hover{
+    background: transparent;
+    color: rgb(34, 3, 46);
+}
+
+/*EFEITO DOS CARDS*/
+.card1:hover{
+    filter: unset;/*tira o efeito de mudança de cor cinza*/
+    transform: scale(1.2);
+}
+.card2:hover{
+    filter: unset;/*tira o efeito de mudança de cor cinza*/
+    transform: scale(1.2);
+}
+.card3:hover{
+    filter: unset;/*tira o efeito de mudança de cor cinza*/
+    transform: scale(1.2);
+}
+/*.card:hover > .card-wrapper::before{
+    height: 200px;
+    width: 200px;
+    opacity: 1;
+}*/
+
+
+/*FOOTER= terceira parte do conteiner*/
+.footer{
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(270deg, #243C58, #486177);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+}
+
+
+ /*BONUS:*/
+ /*PERSONALIZAÇÃO DE BARRA DE ROLAGEM:*/
+
+::-webkit-scrollbar{
+    background: #243C58;
+}
+::-webkit-scrollbar-button{ /*botoes*/
+    background: #243C58;
+}
+::-webkit-scrollbar-thumb{ /*barra de scroll*/
+    background: #486177;
+    border: none;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover{ /*botoes*/
+    background: #0d5fa7;
+}
+
+
+/*CONFIGURAÇÃO PARA QUE O PORTIFÓLIO FIQUE RESPONSIVO:*/
+
+@media screen and (max-width: 600px) {
+    header-container{
+        float: none;
+        display: flex;
+    }  
+}
+
