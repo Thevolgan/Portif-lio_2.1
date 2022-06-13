@@ -30,6 +30,7 @@ html{/*faz com que a linkagem dos projetos na linha 190 seja suave*/
     padding: 0 112px; /*0= em cima e em baixo; 112px= dos lados*/
     position: relative;
     z-index: 1; /*faz o conteiner focar por baixo do menu quando este é acinonado*/
+    columns: auto;
 }
 @keyframes animation1{
     0%{
@@ -403,6 +404,7 @@ e o segundo numero configura a altura (horizontal)*/
     align-items: center;
     justify-content: center;
     color: rgb(255, 255, 255);
+    columns: auto;
 }
 
 
